@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Teddy Momos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@700&family=Georgia&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Teddy Momos
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="window.location.href='order.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section-padding bg-white" style="text-align: center;">
+        <div class="container">
+            <h1 class="display-text" style="color: var(--color-primary);">Get in Touch</h1>
+            <p>We'd love to hear from you!</p>
+            <div style="margin-top: 20px; font-size: 1.1rem; color: var(--color-secondary);">
+                <p><i class="fas fa-map-marker-alt"></i> Shop No.3, 620, Ground floor, Shakti Khand 4<br>Indirapuram,
+                    Ghaziabad, Uttar Pradesh 201014</p>
+                <p style="margin-top:10px;"><a href="https://maps.app.goo.gl/odzLqeUvhjCvnHQu5" target="_blank"
+                        class="btn btn-accent" style="display:inline-block; margin-top:10px; font-size:0.9rem;">View on
+                        Google Maps</a></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div
+                style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                <form>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600">Name</label>
+                        <input type="text" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:6px;"
+                            required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600">Email</label>
+                        <input type="email" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:6px;"
+                            required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600">Message</label>
+                        <textarea rows="5" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:6px;"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Teddy Momos</h3>
+                    <p>Serving happiness, one basket at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> hello@teddymomos.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/odzLqeUvhjCvnHQu5"
+                                target="_blank" style="color:inherit;">Shop No.3, 620, Shakti Khand 4, Indirapuram,
+                                Ghaziabad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teddy Momos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>

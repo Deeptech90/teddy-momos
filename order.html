@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Teddy Momos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@700&family=Georgia&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+
+        .cart-items {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .order-summary {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .total-row {
+            border-top: 2px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Teddy Momos
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <!-- Cart icon hidden on checkout -->
+            </div>
+        </div>
+    </nav>
+
+    <header class="section-padding" style="text-align: center; padding-bottom: 10px;">
+        <div class="container">
+            <h1 style="color: var(--color-primary);">Complete Your Order</h1>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="checkout-grid" id="checkout-content">
+
+                <div class="cart-section">
+                    <h2 style="margin-bottom: 20px;">Your Basket</h2>
+                    <div class="cart-items" id="cart-items">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="checkout-form">
+                    <div class="order-summary">
+                        <h2 style="margin-bottom: 20px;">Delivery Details</h2>
+                        <form id="order-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" required placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label>Delivery Address</label>
+                                <textarea class="form-control" rows="3" required
+                                    placeholder="Street, City, Pincode"></textarea>
+                            </div>
+
+                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Fee</span>
+                                <span>₹40</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total</span>
+                                <span id="total">₹0</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Place
+                                Order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="empty-cart-msg" style="display: none; text-align: center;">
+                <h2>Your cart is empty!</h2>
+                <p>Add some delicious momos to get started.</p>
+                <a href="menu.html" class="btn btn-primary" style="margin-top: 20px;">Browse Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function renderCart() {
+            const cart = Cart.get();
+            const container = document.getElementById('cart-items');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const content = document.getElementById('checkout-content');
+
+            if (cart.length === 0) {
+                content.style.display = 'none';
+                emptyMsg.style.display = 'block';
+                return;
+            }
+
+            content.style.display = 'grid';
+            emptyMsg.style.display = 'none';
+            container.innerHTML = '';
+
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const totalItemPrice = item.price * item.quantity;
+                subtotal += totalItemPrice;
+
+                container.innerHTML += `
+                    <div class="cart-item">
+                        <div class="item-info">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div>
+                                <h4>${item.name}</h4>
+                                <span style="color:#666">₹${item.price} x ${item.quantity}</span>
+                            </div>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+                        </div>
+                        <div style="font-weight:bold">₹${totalItemPrice}</div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('subtotal').innerText = '₹' + subtotal;
+            document.getElementById('total').innerText = '₹' + (subtotal + 40);
+        }
+
+        function updateQty(id, change) {
+            Cart.updateQuantity(id, change);
+            renderCart();
+        }
+
+        document.getElementById('order-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate Order
+            alert('Order Placed Successfully! (This is a demo)');
+            Cart.clear();
+            window.location.href = 'index.html';
+        });
+
+        renderCart();
+    </script>
+</body>
+
+</html>

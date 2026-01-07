@@ -1,0 +1,216 @@
+/* Teddy Momos - Design System & Variables */
+:root {
+  /* Brand Colors - Extracted from Image */
+  --color-primary: #D32F2F;
+  /* Bright Red (Logo/Banner) */
+  --color-primary-dark: #B71C1C;
+  /* Deep Red (Shadows) */
+
+  --color-accent: #FFD700;
+  /* Gold (Stars/Text) */
+  --color-accent-hover: #FFC107;
+  /* Amber */
+
+  --color-wood: #5D4037;
+  /* Dark Wood Texture */
+  --color-wood-light: #8D6E63;
+  /* Lighter Wood */
+
+  /* Backgrounds */
+  --color-bg-sky-light: #BBDEFB;
+  /* Light Blue Sky */
+  --color-bg-sky-dark: #64B5F6;
+  /* Deep Blue Sky */
+  --color-bg-white: #FFFFFF;
+  /* Cards/Sections */
+  --color-bg-cream: #FFFDE7;
+  /* Warm Light Cream */
+
+  /* Text */
+  --color-text-main: #3E2723;
+  /* Dark Brown (High Contrast) */
+  --color-text-muted: #5D4037;
+  /* Muted Brown */
+  --color-text-light: #FFF9F0;
+  /* Light Text on Dark Bg */
+  --color-text-on-wood: #FFECB3;
+  /* Light Cream on Wood */
+
+  /* Typography */
+  --font-display: 'Fredoka One', 'Rozha One', cursive;
+  /* Fun display font if possible, fallback to cursive/serif */
+  --font-heading: 'Merriweather', 'Georgia', serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+
+  /* UI Elements */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 15px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 25px rgba(0, 0, 0, 0.2);
+  --shadow-text: 2px 2px 0px rgba(0, 0, 0, 0.2);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy */
+  --transition-normal: 0.3s ease;
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, var(--color-bg-sky-light) 0%, var(--color-bg-sky-dark) 100%);
+  background-attachment: fixed;
+  /* Parallax-like effect */
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+h1,
+.display-text {
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 3px 3px 0px #FFFFFF, 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  /* Pill shape */
+  font-weight: 700;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: var(--transition-fast);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-primary-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--color-wood);
+  color: var(--color-text-on-wood);
+  border-color: #3E2723;
+}
+
+.btn-secondary:hover {
+  background-color: #4E342E;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+  border-color: #FBC02D;
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Wood texture utility */
+.bg-wood {
+  background-color: var(--color-wood);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 2px, transparent 2px, transparent 4px);
+  color: var(--color-text-on-wood);
+}
+
+.bg-white {
+  background-color: var(--color-bg-white);
+}
+
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}

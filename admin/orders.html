@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders | Teddy Admin</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teddy Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="fas fa-home"></i> Overview</a>
+                <a href="orders.html" class="active"><i class="fas fa-shopping-bag"></i> Orders</a>
+                <a href="menu-editor.html"><i class="fas fa-utensils"></i> Menu</a>
+                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Order Management</h1>
+                <div class="user-info">Admin User</div>
+            </header>
+
+            <div class="section">
+                <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                    <div style="display:flex; gap:10px;">
+                        <button class="btn-sm" style="background:var(--color-primary); color:white;">All</button>
+                        <button class="btn-sm">New</button>
+                        <button class="btn-sm">Preparing</button>
+                        <button class="btn-sm">Delivered</button>
+                    </div>
+                    <input type="text" placeholder="Search Order ID..."
+                        style="padding:8px; border:1px solid #ddd; border-radius:4px;">
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Time</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1024</td>
+                            <td>10 mins ago</td>
+                            <td>Rahul K.</td>
+                            <td>2x Chicken Momos, 1x Pepsi</td>
+                            <td>₹450</td>
+                            <td><span class="badge badge-warning">Preparing</span></td>
+                            <td>
+                                <button class="btn-sm text-primary"><i class="fas fa-check"></i></button>
+                                <button class="btn-sm text-danger"><i class="fas fa-times"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#1023</td>
+                            <td>25 mins ago</td>
+                            <td>Sneha M.</td>
+                            <td>1x Veg Noodles</td>
+                            <td>₹220</td>
+                            <td><span class="badge badge-success">Ready</span></td>
+                            <td>
+                                <button class="btn-sm text-primary"><i class="fas fa-motorcycle"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>

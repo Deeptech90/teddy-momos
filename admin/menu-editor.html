@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Editor | Teddy Admin</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teddy Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html"><i class="fas fa-home"></i> Overview</a>
+                <a href="orders.html"><i class="fas fa-shopping-bag"></i> Orders</a>
+                <a href="menu-editor.html" class="active"><i class="fas fa-utensils"></i> Menu</a>
+                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Menu Management</h1>
+                <div class="user-info">Admin User</div>
+            </header>
+
+            <div style="display:grid; grid-template-columns: 2fr 1fr; gap:30px;">
+                <div class="section">
+                    <h2>Current Items</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Steamed Chicken Momos</td>
+                                <td>₹180</td>
+                                <td>Momos</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td><button class="btn-sm"><i class="fas fa-pen"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Veg Momos</td>
+                                <td>₹150</td>
+                                <td>Momos</td>
+                                <td><span class="badge badge-success">Active</span></td>
+                                <td><button class="btn-sm"><i class="fas fa-pen"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section" style="height:fit-content">
+                    <h2>Add New Item</h2>
+                    <form>
+                        <div style="margin-bottom:15px;">
+                            <label style="display:block; margin-bottom:5px;">Item Name</label>
+                            <input type="text"
+                                style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px;">
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <label style="display:block; margin-bottom:5px;">Price (₹)</label>
+                            <input type="number"
+                                style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px;">
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <label style="display:block; margin-bottom:5px;">Category</label>
+                            <select style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px;">
+                                <option>Momos</option>
+                                <option>Noodles</option>
+                                <option>Sides</option>
+                                <option>Beverages</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom:15px;">
+                            <label style="display:block; margin-bottom:5px;">Description</label>
+                            <textarea style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px;"
+                                rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="width:100%">Add Item</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>

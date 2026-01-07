@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Teddy Momos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@700&family=Georgia&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--color-bg-white);
+            border: 2px solid var(--color-secondary);
+            color: var(--color-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .menu-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-details {
+            padding: 20px;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .menu-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+        }
+
+        .menu-price {
+            font-weight: bold;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+
+        .diet-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tag-veg {
+            background-color: #2ecc71;
+        }
+
+        .tag-nonveg {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Teddy Momos
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="window.location.href='order.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section-padding bg-white" style="text-align: center; padding-bottom: 20px;">
+        <div class="container">
+            <h1 class="display-text" style="color: var(--color-primary);">Our Menu</h1>
+            <p>Delicious flavors, prepared fresh daily.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="momos">Momos</button>
+                <button class="filter-btn" data-filter="noodles">Noodles</button>
+                <button class="filter-btn" data-filter="sides">Sides</button>
+                <button class="filter-btn" data-filter="beverages">Beverages</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-container">
+                <!-- Items will be injected here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Teddy Momos</h3>
+                    <p>Serving happiness, one basket at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> hello@teddymomos.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/odzLqeUvhjCvnHQu5"
+                                target="_blank" style="color:inherit;">Shop No.3, 620, Shakti Khand 4, Indirapuram,
+                                Ghaziabad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teddy Momos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        // Menu Data
+        const menuItems = [
+            {
+                id: 1,
+                name: "Steamed Chicken Momos",
+                price: 180,
+                desc: "Succulent chicken mince with herbs, steamed to perfection.",
+                category: "momos",
+                isVeg: false,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.23 PM.jpeg"
+            },
+            {
+                id: 2,
+                name: "Veg Momos",
+                price: 150,
+                desc: "Fresh cabbage, carrots, and onions in a delicate wrapper.",
+                category: "momos",
+                isVeg: true,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.24 PM.jpeg"
+            },
+            {
+                id: 3,
+                name: "Schezwan Noodles",
+                price: 220,
+                desc: "Spicy wok-tossed noodles with colorful veggies.",
+                category: "noodles",
+                isVeg: true,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.25 PM.jpeg"
+            },
+            {
+                id: 4,
+                name: "Fried Chicken Momos",
+                price: 190,
+                desc: "Crispy fried momos served with spicy red chutney.",
+                category: "momos",
+                isVeg: false,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.26 PM.jpeg"
+            },
+            {
+                id: 5,
+                name: "Paneer Momos",
+                price: 200,
+                desc: "Soft paneer cubes seasoned with mild spices.",
+                category: "momos",
+                isVeg: true,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.28 PM.jpeg"
+            },
+            {
+                id: 6,
+                name: "Masala Fries",
+                price: 120,
+                desc: "Crispy fries tossed in our secret spice mix.",
+                category: "sides",
+                isVeg: true,
+                image: "assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.27 PM.jpeg"
+            }
+        ];
+
+        // Render Menu
+        const menuContainer = document.getElementById('menu-container');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        function renderMenu(category = 'all') {
+            menuContainer.innerHTML = '';
+
+            const filtered = category === 'all'
+                ? menuItems
+                : menuItems.filter(item => item.category === category);
+
+            filtered.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'menu-item';
+                itemEl.innerHTML = `
+                    <div class="diet-tag ${item.isVeg ? 'tag-veg' : 'tag-nonveg'}">
+                        ${item.isVeg ? 'VEG' : 'NON-VEG'}
+                    </div>
+                    <img src="${item.image}" alt="${item.name}" class="menu-img">
+                    <div class="menu-details">
+                        <div class="menu-header">
+                            <h3 class="menu-title">${item.name}</h3>
+                            <span class="menu-price">₹${item.price}</span>
+                        </div>
+                        <p class="menu-desc">${item.desc}</p>
+                        <button class="btn btn-primary" onclick="addToCart(${item.id})" style="width:100%">Add to Cart</button>
+                    </div>
+                `;
+                menuContainer.appendChild(itemEl);
+            });
+        }
+
+        function addToCart(id) {
+            const product = menuItems.find(p => p.id === id);
+            if (product) {
+                Cart.add(product);
+            }
+        }
+
+        // Filter Logic
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderMenu(btn.dataset.filter);
+            });
+        });
+
+        // Initial Render
+        renderMenu();
+    </script>
+</body>
+
+</html>

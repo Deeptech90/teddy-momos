@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Teddy Admin</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Teddy Admin</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active"><i class="fas fa-home"></i> Overview</a>
+                <a href="orders.html"><i class="fas fa-shopping-bag"></i> Orders</a>
+                <a href="menu-editor.html"><i class="fas fa-utensils"></i> Menu</a>
+                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1>Dashboard Overview</h1>
+                <div class="user-info">Admin User</div>
+            </header>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#e3f2fd; color:#1976d2"><i
+                            class="fas fa-shopping-cart"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Orders</h3>
+                        <p class="stat-value">124</p>
+                        <span class="stat-trend increasing">+12% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#e8f5e9; color:#2e7d32"><i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Revenue</h3>
+                        <p class="stat-value">₹45,200</p>
+                        <span class="stat-trend increasing">+8% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background:#fff3e0; color:#f57c00"><i class="fas fa-clock"></i></div>
+                    <div class="stat-info">
+                        <h3>Pending</h3>
+                        <p class="stat-value">5</p>
+                        <span class="stat-trend">Needs Action</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-orders section">
+                <h2>Recent Orders</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1024</td>
+                            <td>Rahul K.</td>
+                            <td><span class="badge badge-warning">Preparing</span></td>
+                            <td>₹450</td>
+                            <td><button class="btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1023</td>
+                            <td>Sneha M.</td>
+                            <td><span class="badge badge-success">Delivered</span></td>
+                            <td>₹220</td>
+                            <td><button class="btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>#1022</td>
+                            <td>Amit S.</td>
+                            <td><span class="badge badge-success">Delivered</span></td>
+                            <td>₹850</td>
+                            <td><button class="btn-sm">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>

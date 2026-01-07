@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Momos | Authentic & Delicious</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display:wght@700&family=Georgia&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-paw"></i> Teddy Momos
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="window.location.href='order.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Teddy Momos & More!</h1>
+                <p>Experience the warmth of authentic, homemade momos and Asian delights. Crafted with love, served with
+                    a smile.</p>
+                <div class="cta-buttons">
+                    <a href="menu.html" class="btn btn-primary">Order Now</a>
+                    <a href="about.html" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Using one of the uploaded images as placeholder, user can swap -->
+                <img src="assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.28 PM.jpeg"
+                    alt="Delicious Momos Platter">
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Teddy Momos?</h2>
+                <p>More than just food, it's a feeling.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Authentic Taste</h3>
+                    <p>Traditional recipes handed down through generations, keeping the true essence alive.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>We source the freshest vegetables and finest meats daily for that perfect crunch.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Made with Love</h3>
+                    <p>Every momo is hand-wrapped with care and attention to detail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu Preview -->
+    <section class="menu-preview section-padding bg-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Customer Favorites</h2>
+                <p>Dishes that our customers keep coming back for.</p>
+            </div>
+            <!-- We will populate this grid dynamically via JS or static HTML -->
+            <div class="features-grid" id="featured-items">
+                <!-- Static Fallback Items -->
+                <div class="feature-card">
+                    <img src="assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.23 PM.jpeg" alt="Steamed Momos"
+                        style="border-radius:8px; margin-bottom:15px; height: 200px; object-fit: cover; width:100%">
+                    <h3>Steamed Chicken Momos</h3>
+                    <p>Classic juicy filling wrapped in delicate dough.</p>
+                    <a href="menu.html" class="btn btn-accent" style="margin-top:10px">View Menu</a>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.24 PM.jpeg" alt="Fried Momos"
+                        style="border-radius:8px; margin-bottom:15px; height: 200px; object-fit: cover; width:100%">
+                    <h3>Fried Spicy Momos</h3>
+                    <p>Crispy perfection tossed in our secret spicy sauce.</p>
+                    <a href="menu.html" class="btn btn-accent" style="margin-top:10px">View Menu</a>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/images/dishes/WhatsApp Image 2026-01-07 at 9.49.25 PM.jpeg" alt="Noodles"
+                        style="border-radius:8px; margin-bottom:15px; height: 200px; object-fit: cover; width:100%">
+                    <h3>Hakka Noodles</h3>
+                    <p>Wok-tossed noodles with crunchy veggies.</p>
+                    <a href="menu.html" class="btn btn-accent" style="margin-top:10px">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Teddy Momos</h3>
+                    <p>Serving happiness, one basket at a time.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="admin/index.html">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> hello@teddymomos.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/odzLqeUvhjCvnHQu5"
+                                target="_blank" style="color:inherit;">Shop No.3, 620, Shakti Khand 4, Indirapuram,
+                                Ghaziabad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teddy Momos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>
